@@ -21,6 +21,12 @@ client.on('interactionCreate', async interaction => {
     await interaction.reply('supp');
   }
 
+  if(interaction.commandName === 'IdFind'){
+    const Guild = client.guilds.cache.get("335507048017952771"); // Getting the guild.
+    const Members = Guild.members.cache.map(member => member.id); // Getting the members and mapping them by ID.
+    console.log(Members);
+  }
+
   if(interaction.commandName === 'Champion')
   {
     //start args

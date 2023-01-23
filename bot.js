@@ -10,23 +10,34 @@ client.on('interactionCreate', async interaction => {
   if (!interaction.isCommand()) return;
 
   if (interaction.commandName === 'toplane') {
-    await interaction.reply('YOU WILL PLAY: ' + topArr[getRandomElement(topArr)].toString);
+    await interaction.reply(
+      'YOU WILL PLAY: ' + getRandomElement(topArr)
+    );
   } else if (interaction.commandName === 'jungle') {
-    await interaction.reply('jng');
+    await interaction.reply(
+      'YOU WILL PLAY: ' + getRandomElement(jngArr)
+    );
   } else if (interaction.commandName === 'midlane') {
-    await interaction.reply('mid');
+    await interaction.reply(
+      'YOU WILL PLAY: ' + getRandomElement(midArr)
+    );
   } else if (interaction.commandName === 'botlane') {
-    await interaction.reply('bot');
+    await interaction.reply(
+      'YOU WILL PLAY: ' + getRandomElement(botArr)
+    );
   } else if (interaction.commandName === 'support') {
-    await interaction.reply('supp');
+    await interaction.reply(
+      'YOU WILL PLAY: ' + getRandomElement(suppArr)
+    );
   }
 });
 client.login(token);
 
 //Gets a random element of the array depending on role entered
 function getRandomElement(arr) {
-  //const randomElement = arr[Math.floor(Math.Random() * arr.length)];
-  return arr[0];
+  const randomElement = Math.floor(Math.random() * arr.length);
+  const element = arr[randomElement];
+  return element;
 }
 
 /*
@@ -206,7 +217,7 @@ const midArr = [
   'Ziggs',
   'Zilean',
   'Zoe'
-]
+];
 
 const botArr = [
   'Aphelios',
@@ -235,7 +246,7 @@ const botArr = [
   'Yasuo',
   'Zeri',
   'Ziggs'
-]
+];
 
 const suppArr = [
   'Alistar',
@@ -276,4 +287,4 @@ const suppArr = [
   'Zac',
   'Zilean',
   'Zyra'
-]
+];

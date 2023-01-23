@@ -10,15 +10,15 @@ client.on('interactionCreate', async interaction => {
   if (!interaction.isCommand()) return;
 
   if (interaction.commandName === 'toplane') {
-    await interaction.reply('YOU WILL PLAY: ' + topArr[getRandomElement(topArr)].toString);
+    await interaction.reply('YOU WILL PLAY: ' + getRandomElement(topArr));
   } else if (interaction.commandName === 'jungle') {
-    await interaction.reply('jng');
+    await interaction.reply('YOU WILL PLAY: ' + getRandomElement(jngArr));
   } else if (interaction.commandName === 'midlane') {
-    await interaction.reply('mid');
+    await interaction.reply('YOU WILL PLAY: ' + getRandomElement(midArr));
   } else if (interaction.commandName === 'botlane') {
-    await interaction.reply('bot');
+    await interaction.reply('YOU WILL PLAY: ' + getRandomElement(botArr));
   } else if (interaction.commandName === 'support') {
-    await interaction.reply('supp');
+    await interaction.reply('YOU WILL PLAY: ' + getRandomElement(suppArr));
   }
 
   if(interaction.commandName === 'IdFind'){
@@ -29,6 +29,8 @@ client.on('interactionCreate', async interaction => {
 
   if(interaction.commandName === 'Champion')
   {
+    if(args[0] == ""){ interaction.reply("Temp") };
+    
     //start args
     let argument = args[0];
     argument.toLowerCase();

@@ -20,13 +20,74 @@ client.on('interactionCreate', async interaction => {
   } else if (interaction.commandName === 'support') {
     await interaction.reply('supp');
   }
+
+  if(interaction.commandName === 'IdFind'){
+    const Guild = client.guilds.cache.get(guild.id); // Getting the guild.
+    const Members = Guild.members.cache.map(member => member.id); // Getting the members and mapping them by ID.
+    console.log(Members);
+  }
+
+  if(interaction.commandName === 'Champion')
+  {
+    //start args
+    let argument = args[0];
+    argument.toLowerCase();
+    
+    //arg error check
+    if(argument != 'top'||'toplane'||'top lane'||'jgl'||'jng'||'jungle'||'mid'||'midlane'||'mid lane'||'bot'||'botlane'||'bot lane'||'supp'||'support') return interaction.reply('Are you stupid? Argument is wrong try again');
+
+
+      //special case
+        if(interaction.user.id == 'lol'){
+          switch(argument){
+            case 'top'||'toplane'||'top lane':
+            interaction.reply('YOU WILL PLAY: ' + getRandomElement(uniqueChampPoolDataSet[1]));
+            break;
+            case 'jgl'||'jungle'||'jng':
+              interaction.reply('YOU WILL PLAY: ' + getRandomElement(uniqueChampPoolDataSet[2]));
+              break;
+            case 'mid'||'midlane'||'mid lane':
+              interaction.reply('YOU WILL PLAY: ' + getRandomElement(uniqueChampPoolDataSet[3]));
+              break;
+            case 'bot'||'botlane'||'bot lane':
+              interaction.reply('YOU WILL PLAY: ' + getRandomElement(uniqueChampPoolDataSet[4]));
+              break;
+            case 'supp' || 'support':
+              interaction.reply('YOU WILL PLAY: ' + getRandomElement(uniqueChampPoolDataSet[5]));
+              break;
+          }
+
+
+        switch(argument){
+        case 'top'||'toplane'||'top lane':
+          await interaction.reply('YOU WILL PLAY: ' + getRandomElement(topArr));
+          break;
+          case 'jgl'|| 'jng' || 'jungle':
+            await interaction.reply('YOU WILL PLAY: ' + getRandomElement(jngArr));
+            break;
+          case 'mid'||'midlane'||'mid lane':
+            await interaction.reply('YOU WILL PLAY: ' + getRandomElement(midArr));
+            break;
+          case 'bot'||'botlane'||'bot lane':
+            await interaction.reply('YOU WILL PLAY: ' + getRandomElement(botArr));
+            break;
+          case 'supp' || 'support':
+            await interaction.reply('YOU WILL PLAY: ' + getRandomElement(suppArr));
+            break;      
+      }
+
+
+    }
+  }
+
 });
 client.login(token);
 
 //Gets a random element of the array depending on role entered
 function getRandomElement(arr) {
-  //const randomElement = arr[Math.floor(Math.Random() * arr.length)];
-  return arr[0];
+  const randomElement = Math.floor(Math.random() * arr.length);
+  const element = arr[randomElement];
+  return element;
 }
 
 /*
@@ -35,6 +96,12 @@ LIST OF ALL ARRAYS
 PROGRAMMING GORE BELOW
 YOU HAVE BEEN WARNED
 */
+
+const uniqueChampPoolDataSet = [['Riven', 'Yone', 'Teemo', 'Irelia', 'Maokai'],
+['Elise', 'Nidalee', 'Kayn', 'Lee Sin', 'Zed'],
+['Talon', 'Zed', 'Qiyana', 'Katarina', 'Irelia'],
+['Samira','Draven','Twitch','Vayne','Kalista'],
+['Yuumi', 'Pyke', 'K\'Sante', 'Xerath', 'Miss Fortune']]
 
 const topArr = [
   'Aatrox',

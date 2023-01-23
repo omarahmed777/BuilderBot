@@ -29,6 +29,8 @@ client.on('interactionCreate', async interaction => {
 
   if(interaction.commandName === 'Champion')
   {
+    if(args[0] == ""){ interaction.reply("Temp") };
+    
     //start args
     let argument = args[0];
     argument.toLowerCase();

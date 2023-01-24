@@ -30,6 +30,9 @@ client.on('interactionCreate', async interaction => {
 
   if (interaction.commandName === 'champion') {
   
+
+    if (interaction.options.get() == null) interaction.reply('no response');
+
     //arg error check
     if (interaction.options.getString().toLowerCase() != 'top' || 'toplane' || 'top lane' || 'jgl' || 'jng' || 'jungle' || 'mid' || 'midlane' || 'mid lane' || 'bot' || 'botlane' || 'bot lane' || 'supp' || 'support') return interaction.reply('Are you stupid? Argument is wrong try again');
 

@@ -6,6 +6,7 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
+
 client.on('interactionCreate', async interaction => {
   if (!interaction.isCommand()) return;
 
@@ -27,20 +28,15 @@ client.on('interactionCreate', async interaction => {
     console.log(Members);
   }
 
-  if (interaction.commandName === 'Champion') {
-    if (args[0] == "") { interaction.reply("Temp") };
-
-    //start args
-    let argument = args[0];
-    argument.toLowerCase();
-
+  if (interaction.commandName === 'champion') {
+  
     //arg error check
-    if (argument != 'top' || 'toplane' || 'top lane' || 'jgl' || 'jng' || 'jungle' || 'mid' || 'midlane' || 'mid lane' || 'bot' || 'botlane' || 'bot lane' || 'supp' || 'support') return interaction.reply('Are you stupid? Argument is wrong try again');
+    if (interaction.options.getString().toLowerCase() != 'top' || 'toplane' || 'top lane' || 'jgl' || 'jng' || 'jungle' || 'mid' || 'midlane' || 'mid lane' || 'bot' || 'botlane' || 'bot lane' || 'supp' || 'support') return interaction.reply('Are you stupid? Argument is wrong try again');
 
 
     //special case
     if (interaction.user.id == 'lol') {
-      switch (argument) {
+      switch (interaction.options.getString()) {
         case 'top' || 'toplane' || 'top lane':
           interaction.reply('YOU WILL PLAY: ' + getRandomElement(uniqueChampPoolDataSet[1]));
           break;
@@ -59,7 +55,7 @@ client.on('interactionCreate', async interaction => {
       }
 
 
-      switch (argument) {
+      switch (interaction.options.getString()) {
         case 'top' || 'toplane' || 'top lane':
           await interaction.reply('YOU WILL PLAY: ' + getRandomElement(topArr));
           break;
@@ -80,6 +76,7 @@ client.on('interactionCreate', async interaction => {
 
     }
   }
+
 
 });
 client.login(token);

@@ -28,6 +28,7 @@ client.on('interactionCreate', async interaction => {
     if (interaction.options.getString('role') == null) interaction.reply('no response');
 
     //arg error check
+    console.log("Entry: " + interaction.options.getString.toLowerCase);
     if (interaction.options.getString('role').toLowerCase() != 'top' || 'toplane' || 'top lane' || 'jgl' || 'jng' || 'jungle' || 'mid' || 'midlane' || 'mid lane' || 'bot' || 'botlane' || 'bot lane' || 'supp' || 'support') return interaction.reply('Are you stupid? Argument is wrong try again');
 
 

@@ -22,10 +22,19 @@ const commands = [
     name: 'support',
     description: 'Replies with a support suggestion!'
   }, {
-    name: 'Champion',
-    description: 'Returns random champion, Add argument for specific lane'
-
+    name: 'champion',
+    description: 'Returns random champion, Add argument for specific lane',
+    options: [{
+      name: "role",
+      description: "The role you want",
+      type: 3,
+      required: true
+    }]
+  }, {
+    name: 'IdFind',
+    description: 'LOOOOOOOOOOOOOOOOOOL'
   }];
+  
 console.log(CLIENT_ID);
 const rest = new REST({ version: '9' }).setToken(token);
 

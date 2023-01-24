@@ -29,11 +29,9 @@ const commands = [
       description: "The role you want",
       type: 3,
       required: true
-    }]
-  // }, {
-  //   name: 'IdFind',
-  //   description: 'LOOOOOOOOOOOOOOOOOOL'
-  }];
+     }
+    ]
+   }];
   
 console.log(CLIENT_ID);
 const rest = new REST({ version: '9' }).setToken(token);

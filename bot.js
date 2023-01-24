@@ -31,15 +31,15 @@ client.on('interactionCreate', async interaction => {
   if (interaction.commandName === 'champion') {
 
 
-    if (interaction.options.get() == null) interaction.reply('no response');
+    if (interaction.options.getString('role') == null) interaction.reply('no response');
 
     //arg error check
-    if (interaction.options.getString().toLowerCase() != 'top' || 'toplane' || 'top lane' || 'jgl' || 'jng' || 'jungle' || 'mid' || 'midlane' || 'mid lane' || 'bot' || 'botlane' || 'bot lane' || 'supp' || 'support') return interaction.reply('Are you stupid? Argument is wrong try again');
+    if (interaction.options.getString('role').toLowerCase() != 'top' || 'toplane' || 'top lane' || 'jgl' || 'jng' || 'jungle' || 'mid' || 'midlane' || 'mid lane' || 'bot' || 'botlane' || 'bot lane' || 'supp' || 'support') return interaction.reply('Are you stupid? Argument is wrong try again');
 
 
     //special case
     if (interaction.user.id == 'lol') {
-      switch (interaction.options.getString()) {
+      switch (interaction.options.getString('role')) {
         case 'top' || 'toplane' || 'top lane':
           interaction.reply('YOU WILL PLAY: ' + getRandomElement(uniqueChampPoolDataSet[1]));
           break;
@@ -59,7 +59,7 @@ client.on('interactionCreate', async interaction => {
 
     }
 
-    switch (interaction.options.getString()) {
+    switch (interaction.options.getString('role')) {
       case 'top' || 'toplane' || 'top lane':
         await interaction.reply('YOU WILL PLAY: ' + getRandomElement(topArr));
         break;

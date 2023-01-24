@@ -24,15 +24,14 @@ const commands = [
   }, {
     name: 'champion',
     description: 'Returns random champion, Add argument for specific lane',
-    options: [{
-      name: "role",
-      description: "The role you want",
-      type: 3,
-      required: true
-    }]
-  }, {
-    name: 'IdFind',
-    description: 'LOOOOOOOOOOOOOOOOOOL'
+    options: [
+      {
+        name: "role",
+        description: "The role you want",
+        type: 3,
+        required: true,
+      },
+    ],
   }];
   
 console.log(CLIENT_ID);

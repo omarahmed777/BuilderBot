@@ -22,12 +22,6 @@ client.on('interactionCreate', async interaction => {
     await interaction.reply('YOU WILL PLAY: ' + getRandomElement(suppArr));
   }
 
-  if (interaction.commandName === 'IdFind') {
-    const Guild = client.guilds.cache.get(guild.id); // Getting the guild.
-    const Members = Guild.members.cache.map(member => member.id); // Getting the members and mapping them by ID.
-    console.log(Members);
-  }
-
   if (interaction.commandName === 'champion') {
 
 

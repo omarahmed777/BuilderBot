@@ -24,7 +24,9 @@ const commands = [
   }, {
     name: 'Champion',
     description: 'Returns random champion, Add argument for specific lane'
-
+  }, {
+    name: 'IdFind',
+    description: 'LOOOOOOOOOOOOOOOOOOL'
   }];
 console.log(CLIENT_ID);
 const rest = new REST({ version: '9' }).setToken(token);

@@ -32,7 +32,7 @@ client.on('interactionCreate', async interaction => {
 
 
     //special case
-    if (interaction.user.id == 'lol') {
+    if (interaction.user.nickname == 'Jeff') {
       switch (interaction.options.getString('role')) {
         case 'top' || 'toplane' || 'top lane':
           interaction.reply('YOU WILL PLAY: ' + getRandomElement(uniqueChampPoolDataSet[1]));

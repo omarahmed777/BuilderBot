@@ -30,9 +30,9 @@ const commands = [
       type: 3,
       required: true
     }]
-  }, {
-    name: 'IdFind',
-    description: 'LOOOOOOOOOOOOOOOOOOL'
+  // }, {
+  //   name: 'IdFind',
+  //   description: 'LOOOOOOOOOOOOOOOOOOL'
   }];
   
 console.log(CLIENT_ID);

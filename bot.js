@@ -29,7 +29,7 @@ client.on('interactionCreate', async interaction => {
   }
 
   if (interaction.commandName === 'champion') {
-  
+
 
     if (interaction.options.get() == null) interaction.reply('no response');
 
@@ -57,27 +57,26 @@ client.on('interactionCreate', async interaction => {
           break;
       }
 
-
-      switch (interaction.options.getString()) {
-        case 'top' || 'toplane' || 'top lane':
-          await interaction.reply('YOU WILL PLAY: ' + getRandomElement(topArr));
-          break;
-        case 'jgl' || 'jng' || 'jungle':
-          await interaction.reply('YOU WILL PLAY: ' + getRandomElement(jngArr));
-          break;
-        case 'mid' || 'midlane' || 'mid lane':
-          await interaction.reply('YOU WILL PLAY: ' + getRandomElement(midArr));
-          break;
-        case 'bot' || 'botlane' || 'bot lane':
-          await interaction.reply('YOU WILL PLAY: ' + getRandomElement(botArr));
-          break;
-        case 'supp' || 'support':
-          await interaction.reply('YOU WILL PLAY: ' + getRandomElement(suppArr));
-          break;
-      }
-
-
     }
+
+    switch (interaction.options.getString()) {
+      case 'top' || 'toplane' || 'top lane':
+        await interaction.reply('YOU WILL PLAY: ' + getRandomElement(topArr));
+        break;
+      case 'jgl' || 'jng' || 'jungle':
+        await interaction.reply('YOU WILL PLAY: ' + getRandomElement(jngArr));
+        break;
+      case 'mid' || 'midlane' || 'mid lane':
+        await interaction.reply('YOU WILL PLAY: ' + getRandomElement(midArr));
+        break;
+      case 'bot' || 'botlane' || 'bot lane':
+        await interaction.reply('YOU WILL PLAY: ' + getRandomElement(botArr));
+        break;
+      case 'supp' || 'support':
+        await interaction.reply('YOU WILL PLAY: ' + getRandomElement(suppArr));
+        break;
+    }
+
   }
 
 
